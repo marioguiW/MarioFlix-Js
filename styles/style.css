@@ -1,0 +1,67 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.carrossel{
+    overflow: hidden;
+}
+
+.cards{
+    display: flex;
+    gap: 10px;
+}
+
+.card{
+    height: 200px;
+    width: 150px;
+}
+
+.btnleft{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 100%;
+    opacity: 0.3;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.btnright{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 100%;
+    opacity: 0.3;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.limitador{
+    position: absolute;
+    margin: 0 7px;
+    width: 150px;
+    height: 100%;
+    opacity: 0;
+    right: 0;
+    z-index: 1;
+    background: blue;
+
+}
+
+.card:hover{
+    opacity: 80%;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
