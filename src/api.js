@@ -48,19 +48,33 @@ retornaLista();
 
 async function retornaLista(){
     const movies = await getMovies(categories[0].path);
-    criaCard(movies)
+    criaCard(movies);
+    backgroundAleatorio(movies);
+
 }
 
 const container = document.getElementById("cards")
 const baseImgUrl = "https://image.tmdb.org/t/p/original/"; 
 
+let numeroRandomico = Math.floor(Math.random()*10);
+console.log(numeroRandomico)
+
+const background = document.getElementById("background-image");
+console.log(background)
 
 async function criaCard(movies){
     console.log(movies);
+
+    background.innerHTML = `
+    <img class="backdrop" sty src="${baseImgUrl}${movies[numeroRandomico].backdrop_path}"></img>
+    `
+    
     movies.forEach((filme) => {
 
+
     container.innerHTML += `
-    <img class="card" src="${baseImgUrl}${filme.poster_path}"></img>
+    <img class="card" style="background: linear-gradient(to left, transparent, mistyrose),
+    url("${baseImgUrl}${filme.poster_path}")" src="${baseImgUrl}${filme.poster_path}"></img>
     
     `
         
@@ -70,6 +84,8 @@ async function criaCard(movies){
     <div class='limitador' id="limitador">Limitador</div>
     `
 }
+
+
 
 
 
