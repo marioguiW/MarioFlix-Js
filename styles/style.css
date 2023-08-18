@@ -2,6 +2,7 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 body{
@@ -12,8 +13,115 @@ body{
     background-color: rgb(18, 17, 19);
 }
 
+.navbar{
+    display: flex;
+    z-index: 15;
+    position: fixed;
+    align-items: center;
+    width: 100%;
+    height: 13%;
+    justify-content: space-between;
+    transition-timing-function: ease-in;
+    transition: all 0.5;
+}
+
+.nav-black{
+    background-color: black;
+    transition: all 0.5;
+    transition-timing-function: ease-in;
+}
+
+.logo{
+    cursor: pointer;
+    width: 15%;
+    margin-left: 2%;
+}
+
+.avatar{
+    height: 50px;
+    width: 55px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 2%;
+}
+
+.conteudo-filme{
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+    width: 500px;
+    z-index: 2;
+    gap: 10px;
+    position: absolute;
+    color: white;
+    margin-left: 3%;
+    margin-top: 10%;
+}
+
+.titulo{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+
+}
+
+.description{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, sans-serif;
+    font-size: 16px;
+    color: gray;
+}
+
+.botoes{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.assistir{
+    display: flex;
+    height: 45px;
+    width: 150px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    border-radius: 3px;
+}
+
+.assistir:hover{
+    opacity: 80%;
+    cursor: pointer;
+}
+
+.botao-play{
+    width: 15px;
+    height: 15px;
+}
+
+.minha-lista{
+    display: flex;
+    height: 45px;
+    width: 150px;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    border-radius: 3px;
+    background-color: rgb(40, 40, 40);
+    color: white;
+}
+
+.minha-lista:hover{
+    opacity: 80%;
+    cursor: pointer;
+}
+
 .background{
     display: flex;
+    flex-direction: column;
 }
 
 .background-image{
@@ -40,68 +148,42 @@ body{
     width: 100%;    
 }
 
-.a{
-    z-index: 10;
-    color: white;
-    position: absolute;
-}
 
 .carrossel{
-    padding: 0px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
+    position: absolute;
     min-height: 100vh;
     min-width: 100vh;
+    margin-top: 40%;
 }
 
 .cards{
     display: flex;
-    gap: 10px;
+    gap: 17px;
+    height: 300px;
+    padding-top: 10px;
+    padding-left: 1%;
 }
 
 .card{
-    height: 240px;
-    width: 190px;
-}
-
-.btnleft{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 30px;
     height: 200px;
-    opacity: 0.3;
-    cursor: pointer;
-    z-index: 3;
-}
-
-.btnright{
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 30px;
-    height: 200px;
-    opacity: 0.3;
-    cursor: pointer;
-    z-index: 3;
-}
-
-.limitador{
-    position: absolute;
-    margin: 0 7px;
-    width: 150px;
-    height: 100%;
-    opacity: 0;
-    right: 0;
-    z-index: 1;
-    background: blue;
-
+    width: 138px;
 }
 
 .card:hover{
     opacity: 80%;
-    transition: all 0.2s;
+    transition: all 0.6s;
     cursor: pointer;
+    transform: scale(1.05);
+
+}
+
+.titulo-card{
+    color: white;
+    font-weight: bold;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 18;
+    margin-bottom: 10px;
+    margin-left: 1%;
 }
 

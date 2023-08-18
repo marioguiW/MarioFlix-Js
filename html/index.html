@@ -9,32 +9,30 @@
 <body>
     <main>
         <section class="background" id="background">
-                    <div class="conteudo-filme">
+            <div class="navbar" id="navbar">
+                <img class="logo" src="/img/logo.png" alt="">
+                <img class="avatar" src="../img/Netflix-avatar.png" alt="">
+            </div>
+            <div class="conteudo-filme" id="conteudo-filme">
+                
+            </div>
+            
+            <div class="background-image" id="background-image">
+               
+            </div>
 
-                    </div>
-                    <div class="background-image" id="background-image">
-                        <div class="b">
-                            
-                        </div>
-                    </div>
 
-                </div>
+            <div class="carrossel" id="carrossel">
+                <h2 class="titulo-card">Em Alta</h2>   
+                <div id="cards-originais" class="cards"></div>
+
+                <h2 class="titulo-card">Originais da Netflix</h2>
+                <div id="cards-originais-netflix" class="cards"></div>     
+            </div>
+
         </section>
-
-    <section class="carrossel" id="carrossel">
-
-        <button type='button' class='btnleft' id="btnleft"></button>
-
-        <div id="cards" class="cards">
-           
-        </div>
-
-        <button type="button" class="btnright" id="btnright"></button>
-
-    </section>
-    
-    <script src="../src/api.js"></script>
-    <script src="../src/slide.js"></script> 
+    <script src="../src/api.js"></script> 
+    <script src="../src/carrossel.js"></script>
     </main>
 </body>
 </html>
