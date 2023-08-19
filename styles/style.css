@@ -26,8 +26,10 @@ body{
 }
 
 .nav-black{
+    transition: all 9.5;
+    transition-timing-function: ease-in;
     background-color: black;
-    transition: all 0.5;
+    transition: all 9.5;
     transition-timing-function: ease-in;
 }
 

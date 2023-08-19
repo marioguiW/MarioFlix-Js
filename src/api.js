@@ -34,6 +34,8 @@ const categories = [
     }
 ]
 
+console.log(categories[2].path)
+
 const getMovies = async(path) => {
     try{
         let url = `https://api.themoviedb.org/3${path}`
@@ -48,9 +50,16 @@ const getMovies = async(path) => {
 retornaLista();
 
 async function retornaLista(){
-    const movies = await getMovies(categories[0].path);
-    criaCard(movies);
-
+    const filmesEmAlta = await getMovies(categories[0].path);
+    const filmesOriginaisNetflix = await getMovies(categories[1].path);
+    const filmesPopulares = await getMovies(categories[2].path)
+    const filmesComedia = await getMovies(categories[3].path);
+    console.log(filmesComedia);
+    console.log(filmesPopulares)
+    criaCard(filmesEmAlta);
+    criaCarrosselEmAlta(filmesEmAlta);
+    criaCarrosselOriginalNetflix(filmesOriginaisNetflix);
+    criaCarrosselFilmesComedia(filmesComedia);
 }
 
 const container = document.getElementById("cards-originais")
@@ -98,17 +107,42 @@ async function criaCard(movies){
     background.innerHTML = `
     <img class="backdrop" sty src="${baseImgUrl}${movies[numeroRandomico].backdrop_path}"></img>
     `
-    
+}
+
+async function criaCarrosselEmAlta(movies){
     movies.forEach((filme) => {
 
-    container.innerHTML += `
-    <img class="card" style="background: linear-gradient(to left, transparent, mistyrose),
-    url("${baseImgUrl}${filme.poster_path}")" src="${baseImgUrl}${filme.poster_path}"></img>
-    
-    `
-        
+        container.innerHTML += `
+        <img class="card" style="background: linear-gradient(to left, transparent, mistyrose),
+        url("${baseImgUrl}${filme.poster_path}")" src="${baseImgUrl}${filme.poster_path}"></img>
+        `        
     });
 }
+
+const cardsOriginaisNetflix = document.getElementById("cards-originais-netflix");
+const cardsComedia = document.getElementById("cards-comedia");
+
+async function criaCarrosselOriginalNetflix(movies){
+    movies.forEach((filme) => {
+
+        cardsOriginaisNetflix.innerHTML += `
+        <img class="card" style="background: linear-gradient(to left, transparent, mistyrose),
+        url("${baseImgUrl}${filme.poster_path}")" src="${baseImgUrl}${filme.poster_path}"></img>
+        `        
+    });
+}
+
+async function criaCarrosselFilmesComedia(movies){
+    movies.forEach((filme) => {
+
+        cardsComedia.innerHTML += `
+        <img class="card" style="background: linear-gradient(to left, transparent, mistyrose),
+        url("${baseImgUrl}${filme.poster_path}")" src="${baseImgUrl}${filme.poster_path}"></img>
+        `        
+    });
+}
+
+
 
 
 
